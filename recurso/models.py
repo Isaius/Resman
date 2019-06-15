@@ -11,10 +11,10 @@ ESTADOS_CHOICES = [
     (EMP, 'Emprestado'),
 ]
 
-ESP = 'espaco'
-ACC = 'acessorio'
-PC = 'computador'
-PROJ = 'projetor'
+ESP = 'espacos'
+ACC = 'acessorios'
+PC = 'computadores'
+PROJ = 'projetores'
 MOV = 'moveis'
 CATEGORIA_CHOICES = [
     (ESP, 'Espaço'),
