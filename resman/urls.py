@@ -22,6 +22,5 @@ from recurso import urls as recurso_urls
 urlpatterns = [
     path('', index),
     path('recurso/', include(recurso_urls)),
-    path('pesquisar', pesquisar),
     path('admin/', admin.site.urls),
 ]
