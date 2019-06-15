@@ -44,5 +44,6 @@ class Recurso(models.Model):
     TMAP = models.IntegerField()
     MDI = models.CharField(max_length=140, blank=True)
 
+    objects = models.Manager()
     def __str__(self):
         return self.descricao
