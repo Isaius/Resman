@@ -9,3 +9,7 @@ class Reserva(models.Model):
 	data_solicitacao = models.DateTimeField('Solicitado em', auto_now_add=True)	# auto_now_add - acho que faz sentido ser assim
 	data_reserva = models.DateTimeField('Reservado para')
 	tempo_alocacao = models.PositiveIntegerField('Tempo de alocação') # limitado pelo tma do recurso reservado
+
+	objects = models.Manager()
+	def __str__(self):
+		return self.identificador
