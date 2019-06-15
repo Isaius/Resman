@@ -12,5 +12,11 @@ class Reserva(models.Model):
 	tempo_alocacao = models.PositiveIntegerField('Tempo de alocação') # limitado pelo tma do recurso reservado
 
 	objects = models.Manager()
+
+	class Meta:
+		verbose_name = 'Reserva'
+		verbose_name_plural = 'Reservas'
+		ordering = ('data_solicitacao',)
+
 	def __str__(self):
 		return self.identificador
