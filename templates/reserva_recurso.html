@@ -91,14 +91,13 @@
   		<p>Preencha os dados para reservar um recurso:</p>
   		</div>
   	<form class="form-horizontal" action="{% url 'nova_reserva' %}" method="POST">
-      {% csrf_token %}
-      {{ form.non_field_errors }}
   	<div class="form-group">
-      {{ form.identificador.errors }}
+      {% csrf_token %}
+      {{ form.as_p }}
+<!--
       <label for="{{ form.identificador.id_for_label }}">Identificador da Reserva:
       </label>
-      {{ form.identificador }}
-      <!-- <input type="text" class="form-control" id="id_recurso" placeholder="Idenfiticador da reserva" disabled> -->
+      <input type="text" class="form-control" id="id_recurso" placeholder="Idenfiticador da reserva" disabled>
     </div>
     <div class="form-group">
       <label for="id_recurso">Usuário:
@@ -129,8 +128,10 @@
       <input type="text" class="form-control" id="tempo_alocacao" placeholder="Digite o tempo de alocação em horas">
     </div>
 	<div align=center>
-	<button type="button" class="btn btn-success btn-lg">Reservar</button>
+-->
+	<button type="submit" class="btn btn-success btn-lg">Reservar</button>
 	</div>
+
   </form>
 </div>
 </div>
