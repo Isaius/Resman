@@ -81,10 +81,23 @@
             </ul>
         </div>
     </nav>
-
-    <h1>Olá, bem vindo ao Resman.</h1>
-    <a href="recurso/list/">Ver recursos</a>
-    <a href="recurso/pesquisar/">Fazer Reserva</a>
-    <a href="/aprova">Aprovar Reservas</a>
+    <div class="container">
+        <div class="jumbotron">
+        <ul class="breadcrumb">
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+        </ul>
+        <div class="container">
+        <div align="center">
+              <h2>Resman</h2>
+              <p>Selecione uma opção do menu:</p>
+        </div>
+          <a href="recurso/pesquisar/" type="button" class="btn btn-primary btn-lg btn-block">Realizar Reserva</a>
+        
+          <a href="#" type="button" class="btn btn-primary btn-lg btn-block">Alocar Reserva</a>
+        
+          <a href="#" type="button" class="btn btn-primary btn-lg btn-block">Aprovar Reserva</a>
+        </div>
+        </div>
+        </div>
 </body>
 </html>
