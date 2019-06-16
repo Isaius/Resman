@@ -50,7 +50,7 @@ class Recurso(models.Model):
 class PesquisaRecursos(models.Model):
     identificador = models.CharField(max_length=10, blank=True)
     descricao = models.CharField(max_length=140, blank=True)
-    tipo = models.CharField(max_length=15, choices = TIPO_CHOICES, blank=True)
+    tipo = models.CharField(max_length=15, choices = TIPO_CHOICES)
     categoria = models.CharField(max_length=20, choices = CATEGORIA_CHOICES, blank=True)
     estado = models.CharField(max_length=20, choices = ESTADOS_CHOICES, default = DISP, blank=True)
     setor = models.CharField(max_length=20, blank=True)

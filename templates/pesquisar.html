@@ -80,13 +80,12 @@
             <li><a href="#">Conta</a></li>
             </ul>
         </div>
-    </nav>
-
-    <h1>Pagina de pesquisa!</h1>
-    <form action="{% url 'pesquisar_recursos' %}" method="POST">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Pesquisar</button>
-    </form>
+    </nav>    
+        <form action="{% url 'pesquisar_recursos' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Pesquisar</button>
+        </form>
+        
 </body>
 </html>

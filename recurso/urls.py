@@ -5,5 +5,5 @@ from .views import pesquisar
 
 urlpatterns = [
     path('list/', list_rec_all, name="resources_list_all"),
-    path('pesquisar/', pesquisar, name="pesquisar_recursos")
+    path('pesquisar/', pesquisar, name="pesquisar_recursos"),
 ]
