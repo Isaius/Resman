@@ -80,12 +80,26 @@
             <li><a href="#">Conta</a></li>
             </ul>
         </div>
-    </nav>    
-        <form action="{% url 'pesquisar_recursos' %}" method="POST">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Pesquisar</button>
-        </form>
-        
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+            <ul class="breadcrumb">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Recursos</a></li>
+                <li class="active">Reserva de recursos</li>        
+            </ul>            
+            <div class="container">
+                <div align="center">
+                    <h2>Pesquisa de Recurso:</h2>
+                    <p>Preencha os dados para recuperar uma lista de recursos:</p>
+                </div>
+                <form action="{% url 'pesquisar_recursos' %}" method="POST" class="form-horizontal">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit">Pesquisar</button>
+                </form>
+            </div>
+        </div>
+    </div>      
 </body>
 </html>
