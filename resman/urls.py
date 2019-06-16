@@ -21,7 +21,7 @@ from recurso import urls as recurso_urls
 from reserva import urls as reserva_urls
 
 urlpatterns = [
-    path('', index),
+    path('', index, name='homepage'),
     path('recurso/', include(recurso_urls)),
     path('reserva/', include(reserva_urls)),
     path('admin/', admin.site.urls),
