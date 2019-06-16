@@ -96,7 +96,7 @@
                 <form action="{% url 'pesquisar_recursos' %}" method="POST" class="form-horizontal">
                     {% csrf_token %}
                     {{ form.as_p }}
-                    <button type="submit">Pesquisar</button>
+                    <button type="submit" class="btn btn-success btn-lg">Pesquisar</button>
                 </form>
             </div>
         </div>
