@@ -25,7 +25,6 @@ def reservar_recurso(request):
 			identificador=idt,
 			recurso=rec,
 			usuario=usu,
-			data_solicitacao=date.today(),
 			data_reserva=data_r,
 			tempo_alocacao=tempo_a
 		)
