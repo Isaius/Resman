@@ -102,7 +102,7 @@
                     <tr>
                         <th>Identificador</th>
                         <th>Recurso</th>
-                        <th>Usuáriog</th>
+                        <th>Usuário</th>
                         <th>Data</th>
                         <th>Opções</th>
                     </tr>
@@ -114,7 +114,7 @@
                             <td>{{ reserva.recurso.descricao }} </td>
                           	<td>{{ reserva.usuario.nome }} </td>
                           	<td>{{ reserva.data_reserva }} </td>
-                            <td><a href="show/">Visualizar</a></td> 
+                            <td><a href="{% url 'visualizar_reserva' reserva.identificador %}">Visualizar</a></td> 
                         </tr>
                     {%endfor%}
                 </tbody>
