@@ -6,6 +6,12 @@ from recurso.models import Recurso
 from datetime import date
 
 # Create your views here.
+def listar_reservas(request):
+	reservas = Reserva.objects.all()
+	for r in reservas:
+		print(r)
+	return render(request, 'listar_reservas.html', {'reservas': reservas})
+
 def reservar_recurso(request):
 	form = ReservarForm(request.POST)
 

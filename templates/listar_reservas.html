@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Resman | Reservas</title>
+    <link rel="stylesheet" href="{% static '/Bootstrap/bootstrap.min.css' %}">
+    <script src="{% static 'Bootstrap/jquery.min.js' %}"></script>
+    <script src="{% static 'Bootstrap/bootstrap.min.js' %}"></script>
+    
+    <style>
+        .navbar-default {
+            background-color:#6B8E23;
+        }
+        .navbar-default .navbar-brand {
+            color: white; 
+            font-size: 2.0em;
+            font-weight: bold;
+        } 
+        .navbar-default .navbar-nav > li > a {
+            color: white;
+            font-size: 1.3em; 
+            font-weight: bold;
+        }
+        ul.breadcrumb{
+            background-color:#3CB371;
+        }
+        .breadcrumb > li > a {
+            color: white;
+            font-size: 1.3em; 
+            font-weight: bold;
+        }
+        .breadcrumb .active{
+            color: 	#DCDCDC;
+            font-size: 1.3em; 
+            font-weight: bold;       
+        }
+        body {
+            background-color:#3CB371;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        th{
+            text-align: center;
+        }
+    </style>
+  
+   </head>
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="{% url 'homepage' %}">Resman</a>
+            </div>
+            <ul class="nav navbar-nav">
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Recursos<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="#">Cadastrar</a></li>
+                <li><a href="#">Inserir Planilha</a></li>
+                <li><a href="#">Alterar</a></li>
+                <li><a href="#">Listar</a></li>
+                <li><a href="#">Excluir</a></li>
+                <li><a href="#">Indisponibilizar</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Reservas<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="#">Nova Reserva</a></li>
+                <li><a href="#">Alterar</a></li>
+                <li><a href="#">Listar</a></li>
+                <li><a href="#">Excluir</a></li>
+                </ul>
+            </li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Alocações<span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                <li><a href="#">Alterar</a></li>
+                <li><a href="#">Excluir</a></li>
+                <li><a href="#">Listar</a></li>
+                </ul>
+            </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">Conta</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="jumbotron">
+        <ul class="breadcrumb">
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li><a href="#">Recursos</a></li>
+            <li class="active">Listagem de Reservas</li>        
+        </ul>
+        <div class="container">
+            <div class="table-responsive">          
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th colspan="4">Reserva</th>
+                        <th>Opções</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for reserva in reservas %}
+                        <tr>
+                            <td>{{ reserva.identificador }} </td>
+                            <td>{{ reserva.recurso.descricao }} </td>
+                          	<td>{{ reserva.usuario.nome }} </td>
+                          	<td>{{ reserva.data_reserva }} </td>
+                            <td><a href="show/">Visualizar</a></td> 
+                        </tr>
+                    {%endfor%}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div> 
+</body>
+</html>
