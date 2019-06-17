@@ -1,5 +1,9 @@
+*.db
+*.sqlite3
 *.pyc
 *~
-__pycache__
-venv
-.DS_Store
+.*
+
+# Accept these files in the repository
+!.gitignore
+!.travis.yml
