@@ -1,7 +1,8 @@
-﻿{% load static %}
+{% load static %}
+<!DOCTYPE html>
 <html>
 <head>
-  	<title>Home</title>
+  	<title>Resman | Visualizar Reserva</title>
   		<meta charset="utf-8">
   		<meta name="viewport" content="width=device-width, initial-scale=1">
   		<link rel="stylesheet" href="{% static '/Bootstrap/bootstrap.min.css' %}">
@@ -33,20 +34,16 @@
         font-size: 1.3em; 
         font-weight: bold;       
         }
-        .table{
-        background-color:white;
-        }
  		body {
   		background-color:#3CB371;
 		}
         </style>
 	</head>
 <body>
-
 <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Resman</a>
+      <a class="navbar-brand" href="{% url 'homepage' %}">Resman</a>
     </div>
     <ul class="nav navbar-nav">
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Recursos<span class="caret"></span></a>
@@ -84,18 +81,59 @@
 <div class="container">
 <div class="jumbotron">
 <ul class="breadcrumb">
-    <li><a href="#">Home</a></li>
+    <li><a href="{% url 'homepage' %}">Home</a></li>
+    <li><a href="#">Recursos</a></li>
+    <li class="active">Reserva de recursos</li>        
 </ul>
 <div class="container">
-<div align="center">
-  	<h2>Resman</h2>
-  	<p>Selecione uma opção do menu:</p>
-</div>
-  <div align="center">
-  <a href="{% url 'pesquisar_recursos' %}" type="button" class="btn btn-success btn-lg">Realizar Reserva</a>
-  <a href="{% url 'listar_reservas' %}" type="button" class="btn btn-success btn-lg">Alocar Reserva</a>
-  <a href="#" type="button" class="btn btn-success btn-lg">Aprovar Reserva</a>
-  </div>
+		<div align="center">
+  		<h2><b>Dados da Reserva:</b></h2>
+      <BR><BR>
+  		</div>
+  	<form class="form-horizontal" action="#" method="POST">
+  	<div class="form-group">
+      {% csrf_token %}
+      {{ form.as_p }}
+<!--
+      <label for="{{ form.identificador.id_for_label }}">Identificador da Reserva:
+      </label>
+      <input type="text" class="form-control" id="id_recurso" placeholder="Idenfiticador da reserva" disabled>
+    </div>
+    <div class="form-group">
+      <label for="id_recurso">Usuário:
+      </label>
+      <input type="text" class="form-control" id="id_recurso" placeholder="Nome do usuário" disabled>
+    </div>
+    <div class="form-group">
+      <label for="id_recurso">Descrição do Recurso:
+      </label>
+      <input type="text" class="form-control" id="id_recurso" placeholder="Descrição do recurso" disabled>
+    </div>
+    <div class="form-group">
+      <label for="id_recurso">Identificador do Recurso:
+      </label>
+      <input type="text" class="form-control" id="id_recurso" placeholder="Idenfiticador do recurso" disabled>
+    </div>
+    <div class="form-group">
+      <label for="data_aprov">Data da solicitação:</label>
+      <input type="datetime-local" class="form-control" id="data_solicitacao">
+    </div>
+    <div class="form-group">
+      <label for="data_aprov">Data da reserva:</label>
+      <input type="datetime-local" class="form-control" id="data_reserva">
+    </div>
+    <div class="form-group">
+      <label for="id_recurso">Tempo de alocação:
+      </label>
+      <input type="text" class="form-control" id="tempo_alocacao" placeholder="Digite o tempo de alocação em horas">
+    </div>
+	<div align=center>
+-->
+	<button type="submit" class="btn btn-success btn-lg">Alocar</button>
+  <button type="button" class="btn btn-danger btn-lg">Recusar</button>
+	</div>
+
+  </form>
 </div>
 </div>
 </div>

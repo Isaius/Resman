@@ -5,6 +5,7 @@ from recurso.models import Recurso
 from datetime import datetime, timedelta
 from pytz import utc
 
+
 class ReservarForm(ModelForm):
 	class Meta:
 		model = Reserva
@@ -32,3 +33,16 @@ class ReservarForm(ModelForm):
 				self.add_error('tempo_alocacao', msg)
 
 		return cleaned_data
+
+
+class VisReservaForm(ModelForm):
+	def __init__(self, *args, **kwargs):
+		super().__init__(*args, **kwargs)
+		self.fields['identificador'].widget.attrs['readonly'] = True
+		self.fields['recurso'].widget.attrs['readonly'] = True
+		self.fields['usuario'].widget.attrs['readonly'] = True
+		self.fields['tempo_alocacao'].widget.attrs['readonly'] = True
+
+	class Meta:
+		model = Reserva
+		fields = ['identificador', 'recurso', 'usuario', 'data_reserva', 'tempo_alocacao']

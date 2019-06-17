@@ -1,11 +1,28 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from .forms import ReservarForm
+from .forms import ReservarForm, VisReservaForm
 from .models import Reserva
 from recurso.models import Recurso
 from datetime import date
 
 # Create your views here.
+def visualizar_reserva(request, reserva_id):
+	reserva = Reserva.objects.get(pk=reserva_id)
+	form = VisReservaForm(initial={
+			'identificador': reserva.identificador,
+			'recurso': reserva.recurso,
+			'usuario': reserva.usuario,
+			'data_reserva': reserva.data_reserva,
+			'tempo_alocacao': reserva.tempo_alocacao
+		})
+	return render(request, 'visualizar_reserva.html', {'form': form})
+
+def listar_reservas(request):
+	reservas = Reserva.objects.all()
+	for r in reservas:
+		print(r)
+	return render(request, 'listar_reservas.html', {'reservas': reservas})
+
 def reservar_recurso(request):
 	form = ReservarForm(request.POST)
 
