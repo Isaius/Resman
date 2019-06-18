@@ -19,10 +19,12 @@ from .views import index
 from .views import pesquisar
 from recurso import urls as recurso_urls
 from reserva import urls as reserva_urls
+from alocacao import urls as alocacao_urls
 
 urlpatterns = [
     path('', index, name='homepage'),
     path('recurso/', include(recurso_urls)),
     path('reserva/', include(reserva_urls)),
+    path('alocacao/', include(alocacao_urls)),
     path('admin/', admin.site.urls),
 ]
