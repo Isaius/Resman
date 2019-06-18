@@ -15,7 +15,7 @@ def visualizar_reserva(request, reserva_id):
 			'data_reserva': reserva.data_reserva,
 			'tempo_alocacao': reserva.tempo_alocacao
 		})
-	return render(request, 'visualizar_reserva.html', {'form': form})
+	return render(request, 'visualizar_reserva.html', {'reserva': reserva, 'form': form})
 
 def listar_reservas(request):
 	reservas = Reserva.objects.all()
@@ -32,11 +32,6 @@ def reservar_recurso(request):
 		usu = form.cleaned_data['usuario']
 		data_r = form.cleaned_data['data_reserva']
 		tempo_a = form.cleaned_data['tempo_alocacao']
-
-		#if tempo_a > rec.TMA:
-		#	print('Tempo máximo de alocacao excedido: ' + str(tempo_a) + ', '
-		#		+ 'recurso' + rec.__str__() + ' tem tma ' + str(rec.TMA))
-		#	return render(request, 'reserva_recurso.html', {'form': form})
 
 		reserva = Reserva(
 			identificador=idt,

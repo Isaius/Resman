@@ -90,45 +90,10 @@
   		<h2><b>Dados da Reserva:</b></h2>
       <BR><BR>
   		</div>
-  	<form class="form-horizontal" action="#" method="POST">
+  	<form class="form-horizontal" action="{% url 'alocar_reserva' %}" method="POST">
   	<div class="form-group">
       {% csrf_token %}
       {{ form.as_p }}
-<!--
-      <label for="{{ form.identificador.id_for_label }}">Identificador da Reserva:
-      </label>
-      <input type="text" class="form-control" id="id_recurso" placeholder="Idenfiticador da reserva" disabled>
-    </div>
-    <div class="form-group">
-      <label for="id_recurso">Usuário:
-      </label>
-      <input type="text" class="form-control" id="id_recurso" placeholder="Nome do usuário" disabled>
-    </div>
-    <div class="form-group">
-      <label for="id_recurso">Descrição do Recurso:
-      </label>
-      <input type="text" class="form-control" id="id_recurso" placeholder="Descrição do recurso" disabled>
-    </div>
-    <div class="form-group">
-      <label for="id_recurso">Identificador do Recurso:
-      </label>
-      <input type="text" class="form-control" id="id_recurso" placeholder="Idenfiticador do recurso" disabled>
-    </div>
-    <div class="form-group">
-      <label for="data_aprov">Data da solicitação:</label>
-      <input type="datetime-local" class="form-control" id="data_solicitacao">
-    </div>
-    <div class="form-group">
-      <label for="data_aprov">Data da reserva:</label>
-      <input type="datetime-local" class="form-control" id="data_reserva">
-    </div>
-    <div class="form-group">
-      <label for="id_recurso">Tempo de alocação:
-      </label>
-      <input type="text" class="form-control" id="tempo_alocacao" placeholder="Digite o tempo de alocação em horas">
-    </div>
-	<div align=center>
--->
 	<button type="submit" class="btn btn-success btn-lg">Alocar</button>
   <button type="button" class="btn btn-danger btn-lg">Recusar</button>
 	</div>
